@@ -157,16 +157,12 @@ header{
     color:#263453;
     padding-bottom:30px;
 }
-#projects span{
-    cursor:pointer;
-}
-.carousel{
-    display:inline-block;
-    
-}
 #contact{
     padding:30px 0 50px 0;
     background-color:#E3E3E3;
+}
+#contact i{
+    font-size:30px;
 }
 .cont-wrap{
     text-align:center;
@@ -234,22 +230,21 @@ footer p{
 }
 #totop{
     position:fixed;
-    font-size:36px;
+    font-size:50px;
     bottom:20px;
     left:20px;
     display:none;
 }
-#totop span{
+#totop i{
     cursor:pointer;
 }
 .controller{
-    font-size:30px;
+    font-size:40px;
     cursor:pointer;
     margin-top:10px;
     color:#263251;
 }
 .controller:hover{
-    background-color:#263251;
     color:#E3E3E3;
 }
 .left{
