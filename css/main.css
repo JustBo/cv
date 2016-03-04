@@ -238,6 +238,9 @@ footer p{
 #totop i{
     cursor:pointer;
 }
+#totop i:hover{
+    color:#4CDDDD;
+}
 .controller{
     font-size:40px;
     cursor:pointer;
