@@ -1,7 +1,9 @@
 $(function(){
+  //menu for small device
   $('#menu-btn').click(function() {
     $('.top-nav ul').toggleClass('show');
   });
+  //to top button
   $(window).scroll(function(e) {
     if(window.scrollY > 400) {
       $('#totop').show('3000');  
@@ -9,6 +11,7 @@ $(function(){
       $('#totop').hide('3000');
     }
   });
+  //anchors smouth
   $('a[href^="#"').click( function() {
     if($(this).attr('class') === "scroll"){
       var scroll_element = $(this).attr('href'); 
@@ -16,21 +19,24 @@ $(function(){
 	  $('html, body').animate({ scrollTop:$(scroll_element).offset().top }, 900); 
 	  return false;
   });
+  //slider
   var item  = $('.slider .item');
   var nmbSl = item.length;
   var curAct = curPosition();
   var circle = $('.contr-circle li');
-  var nextAct = curAct;
+  var nextAct = curAct+1;
+  setInterval(function(){
+    curAct  = curPosition();
+    nextAct = (curAct+1) % nmbSl;
+    change();
+  },4000);
   $('.contr-circle li').click(function() {
     curAct  = curPosition();
     nextAct = $(this).data('slide');
     change();
   });
   $('.controller').click(function() {
-    //curent active item
     curAct = curPosition();
-    //next active item
-    nextAct = curAct;
     if($(this).hasClass('left')){
     	nextAct = (curAct-1) % nmbSl;
       if(nextAct<0){
