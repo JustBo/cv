@@ -21,6 +21,11 @@ $(function(){
   var curAct = curPosition();
   var circle = $('.contr-circle li');
   var nextAct = curAct;
+  $('.contr-circle li').click(function() {
+    curAct  = curPosition();
+    nextAct = $(this).data('slide');
+    change();
+  });
   $('.controller').click(function() {
     //curent active item
     curAct = curPosition();
@@ -34,10 +39,7 @@ $(function(){
     }else if ($(this).hasClass('right')){
     	nextAct = (curAct+1) % nmbSl;
     };
-    $(item[curAct]).removeClass('active').animate({opacity:0});
-    $(item[nextAct]).animate({opacity:1},1000).addClass('active');
-    $(circle[curAct]).removeClass('circ-act');
-    $(circle[nextAct]).addClass('circ-act');
+    change();
   });
   function curPosition() {
     var res;
@@ -49,5 +51,11 @@ $(function(){
   				}
         });
     return res;   
+  };
+  function change() {
+    $(item[curAct]).removeClass('active').animate({opacity:0});
+    $(item[nextAct]).animate({opacity:1},1000).addClass('active');
+    $(circle[curAct]).removeClass('circ-act');
+    $(circle[nextAct]).addClass('circ-act');
   };
 });
