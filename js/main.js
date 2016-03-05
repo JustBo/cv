@@ -21,6 +21,7 @@ $(function(){
   	var nmbSl = item.length;
     var i = -1;
     var curAct = 0;
+    var circle = $('.contr-circle li');
     //curent active item
     $('.slider .item').each(function() {
       ++i;
@@ -40,5 +41,7 @@ $(function(){
     };
     $(item[curAct]).removeClass('active').animate({opacity:0});
     $(item[nextAct]).animate({opacity:1},1000).addClass('active');
+    $(circle[curAct]).removeClass('circ-act');
+    $(circle[nextAct]).addClass('circ-act');
   });
 });
