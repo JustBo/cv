@@ -1,15 +1,43 @@
 $(function(){
+  $('.home-soc').animate({marginTop:'5px'},1000);
+  $('.home-content,.home-avat').animate({opacity:1},1000);
   //menu for small device
   $('#menu-btn').click(function() {
     $('.top-nav ul').toggleClass('show');
   });
   //to top button
+  var stop = 1;
   $(window).scroll(function(e) {
-    if(window.scrollY > 400) {
+    if(window.scrollY > 600) {
       $('#totop').show('3000');  
     }else{
       $('#totop').hide('3000');
-    }
+    };
+    if (window.scrollY + $(window).height() > $('#projects h2').offset().top) {
+      $('#projects h2').animate({opacity:1},1000);
+    };
+    if (window.scrollY + $(window).height() > $('#gform').offset().top) {
+      $('#gform').animate({height:'100%',width:'100%'},2000);
+    };
+    if (window.scrollY + $(window).height() > $('.skillset').offset().top) {
+      $('#html').animate({width:'70%'},2000);
+      $('#css').animate({width:'60%'},2000);
+      $('#js').animate({width:'40%'},2000);
+      if(stop){
+        stop = 0;
+        $('.skill-value span').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+      };
+    };
   });
   //anchors smouth
   $('a[href^="#"').click( function() {
