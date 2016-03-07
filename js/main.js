@@ -39,6 +39,9 @@ $(function(){
       };
     };
   });
+  $('.slide-img').hover(function(){
+    $('.dispnon').toggle('slow');
+  });
   //anchors smouth
   $('a[href^="#"').click( function() {
     if($(this).attr('class') === "scroll"){

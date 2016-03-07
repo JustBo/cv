@@ -56,6 +56,7 @@ header{
 }
 .home-avat img:hover{
     opacity:0.93;
+    transition:opacity 0.8s;
 }
 .home-content{
     padding:30px 0;
@@ -160,7 +161,7 @@ header{
     background-size:cover;
     background-attachment:fixed;
     background-position:50% 70%;
-    color:#e5e5e5;
+    color:#360202;
 }
 #certific ul{
     list-style:circle;
@@ -169,6 +170,7 @@ header{
 #certific li{
     margin-top:15px;
     font-size:21px;
+    font-weight:600;
 }
 #certific li:hover{
     color:#24B5C2;
